@@ -1,0 +1,91 @@
+from flask_sqlalchemy import SQLAlchemy
+db = SQLAlchemy()
+
+class User(db.Model):
+    id = db.Column(db.Integer,primary_key = True)
+    username = db.Column(db.String(80),unique = True,nullable = False)
+    email = db.Column(db.String(120),unique = True,nullable = False)
+    password = db.Column(db.String(120),nullable = False)
+    dob = db.Column(db.Date,nullable = False)
+    fullname = db.Column(db.String(120),nullable = False)
+    is_admin = db.Column(db.Boolean,default = False)
+    qualification = db.Column(db.String(120),nullable = False)
+
+    scores = db.relationship('Score',back_populates='user',cascade = 'all, delete')
+
+class Subject(db.Model):    
+    id = db.Column(db.Integer,primary_key = True)
+    name = db.Column(db.String(80),nullable = False)
+    description = db.Column(db.String(120),nullable = False)
+
+    chapters = db.relationship('Chapter',back_populates='subject',cascade = 'all, delete')
+    scores = db.relationship('Score',back_populates='subject',cascade = 'all, delete')
+
+
+class Chapter(db.Model):
+    id = db.Column(db.Integer,primary_key = True)
+    name = db.Column(db.String(80),nullable = False)
+    description = db.Column(db.String(120),nullable = False)
+    subject_id  = db.Column(db.Integer,db.ForeignKey('subject.id'),nullable=False)
+
+    subject = db.relationship('Subject',back_populates='chapters')
+    quizzes = db.relationship('Quiz',back_populates='chapter',cascade = 'all, delete')
+    scores = db.relationship('Score',back_populates='chapter',cascade = 'all, delete')
+    questions = db.relationship('Question',back_populates='chapter',cascade = 'all, delete')
+
+
+
+class Quiz(db.Model):
+    id = db.Column(db.Integer,primary_key = True)
+    name = db.Column(db.String(80),nullable = False)
+    description = db.Column(db.String(120),nullable = False)
+    chapter_id  = db.Column(db.Integer,db.ForeignKey('chapter.id'),nullable=False)
+    is_active = db.Column(db.Boolean,default=True)
+    date = db.Column(db.DateTime,nullable=False)
+    duration = db.Column(db.Time,nullable=False)
+    single_attempt = db.Column(db.Boolean,nullable=True)
+
+    chapter = db.relationship('Chapter',back_populates='quizzes')
+    questions = db.relationship('Question',back_populates='quiz',cascade = 'all, delete')
+    scores = db.relationship('Score',back_populates='quiz',cascade = 'all, delete')
+
+
+
+    
+class Question(db.Model):
+    id = db.Column(db.Integer,primary_key = True)
+    question_tag=db.Column(db.String(120),nullable=False)
+    question_state=db.Column(db.Text,nullable=False)
+    option1=db.Column(db.String(120),nullable=False)
+    option2=db.Column(db.String(120),nullable=False)
+    option3=db.Column(db.String(120),nullable=False)
+    option4=db.Column(db.String(120),nullable=False)
+    correct_option=db.Column(db.String(120),nullable=False)
+    quiz_id=db.Column(db.Integer,db.ForeignKey('quiz.id'),nullable=False)
+    chapter_id=db.Column(db.Integer,db.ForeignKey('chapter.id'),nullable=False)
+    
+    chapter = db.relationship('Chapter',back_populates='questions')
+    quiz = db.relationship('Quiz',back_populates='questions')
+
+
+class Score(db.Model):
+    id = db.Column(db.Integer,primary_key = True)
+    user_id=db.Column(db.Integer,db.ForeignKey('user.id'),nullable=False)
+    quiz_id=db.Column(db.Integer,db.ForeignKey('quiz.id'),nullable=False)
+    subject_id=db.Column(db.Integer,db.ForeignKey('subject.id'),nullable=False)
+    chapter_id=db.Column(db.Integer,db.ForeignKey('chapter.id'),nullable=False)
+    score=db.Column(db.Integer,nullable=False)
+    total_possible_score=db.Column(db.Integer,nullable=False)
+    date=db.Column(db.DateTime,nullable = False )
+    percentage=db.Column(db.Float,nullable = False )
+
+    user=db.relationship('User',back_populates='scores')
+    subject=db.relationship('Subject',back_populates='scores')
+    chapter=db.relationship('Chapter',back_populates='scores')
+    quiz = db.relationship('Quiz',back_populates='scores')
+
+
+
+
+
+
