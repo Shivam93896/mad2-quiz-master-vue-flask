@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Monthly Quiz Report</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 30px; }
+        h2 { color: #2c3e50; }
+        table { border-collapse: collapse; width: 100%; margin-top: 20px; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: center; }
+        th { background-color: #f2f2f2; }
+        .summary { margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <h2>Monthly Quiz Report for {{ user.username }}</h2>
+    <p>Hello {{ user.username }},</p>
+    <p>Here is your quiz performance report for <strong>{{ month }}</strong>:</p>
+
+    <div class="summary">
+        <p><strong>Total Quizzes Attempted:</strong> {{ total_quizzes }}</p>
+        <p><strong>Average Percentage:</strong> {{ avg_percentage|round(2) }}%</p>
+    </div>
+
+    {% if quiz_details %}
+    <table>
+        <thead>
+            <tr>
+                <th>Quiz Name</th>
+                <th>Date Attempted</th>
+                <th>Score (%)</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for score in quiz_details %}
+            <tr>
+                <td>{{ score.quiz_name }}</td>
+                <td>{{ score.date_attempted.strftime('%Y-%m-%d') if score.date_attempted else 'N/A' }}</td>
+                <td>{{ score.percentage|round(2) }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+    <p>No quizzes attempted this month.</p>
+    {% endif %}
+
+    <p>Keep up the good work!</p>
+</body>
+</html>
