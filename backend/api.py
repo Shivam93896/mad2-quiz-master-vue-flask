@@ -532,3 +532,4 @@ class Admin_User(Resource):
                 'qualification':user.qualification,
             })
         return user_json, 200
+ 
