@@ -44,7 +44,7 @@ with app.app_context():
 
 @app.get('/')
 def index():
-    return 'Hello world Shivam Kumar'   
+    return 'Hello 👋🏻👋🏻👋🏻'   
 
 @app.get('/test')
 @cache.cached(timeout=10)
