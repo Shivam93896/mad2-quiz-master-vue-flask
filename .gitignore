@@ -6,8 +6,8 @@ venv/
 .env
 
 # Database
-instance/
-*.db
+# instance/
+# *.db
 
 # Node/Vue
 frontend/node_modules/
