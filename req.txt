@@ -22,3 +22,4 @@ passlib
 bcrypt
 celery
 redis
+Flask-Caching
