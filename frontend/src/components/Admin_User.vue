@@ -75,7 +75,7 @@ export default {
     },
   methods: {
     fetchUser() {
-      const response = fetch('http://127.0.1:5000/admin_user', {
+      const response = fetch('https://mad2-quiz-master-vue-flask-7.onrender.com//admin_user', {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
