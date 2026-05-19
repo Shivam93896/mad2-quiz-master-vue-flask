@@ -18,8 +18,8 @@ SQLAlchemy==2.0.41
 typing_extensions==4.13.2
 Werkzeug==3.1.3
 gunicorn
-passlib
-bcrypt
+passlib==1.7.4
+bcrypt==4.0.1
 celery
 redis
 Flask-Caching
