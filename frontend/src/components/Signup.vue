@@ -96,7 +96,7 @@ export default {
   },
   methods: {
     async signup() {
-      const response = await fetch('mad2-quiz-master-vue-flask-7.onrender.com/signup', {
+      const response = await fetch('https://mad2-quiz-master-vue-flask-7.onrender.com//signup', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

@@ -218,7 +218,7 @@ export default {
   methods: {
 
     fetchSubjects() {
-        fetch("mad2-quiz-master-vue-flask-7.onrender.com/add_subject/get", {
+        fetch("https://mad2-quiz-master-vue-flask-7.onrender.com//add_subject/get", {
             method: "GET",
             headers: {
                 "authorization": 'Bearer '+ localStorage.getItem('admin_token'),
@@ -239,7 +239,7 @@ export default {
     },
     addSubject() {
     
-         fetch("mad2-quiz-master-vue-flask-7.onrender.com/add_subject/post", {
+         fetch("https://mad2-quiz-master-vue-flask-7.onrender.com//add_subject/post", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -266,7 +266,7 @@ export default {
     },
 
     editSubject() {
-      fetch(`mad2-quiz-master-vue-flask-7.onrender.com/edit_subject/${this.SelectedSubject.id}`, {
+      fetch(`https://mad2-quiz-master-vue-flask-7.onrender.com//edit_subject/${this.SelectedSubject.id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -286,7 +286,7 @@ export default {
         });
     },
     deleteSubject(id) {
-      fetch(`mad2-quiz-master-vue-flask-7.onrender.com/delete_subject/${id}`, {
+      fetch(`https://mad2-quiz-master-vue-flask-7.onrender.com//delete_subject/${id}`, {
         method: "DELETE",
         headers: {
           "authorization": 'Bearer '+ localStorage.getItem('admin_token')
@@ -307,7 +307,7 @@ export default {
       modal.show();
     },
     editChapter() {
-      fetch(`mad2-quiz-master-vue-flask-7.onrender.com/edit_chapter/${this.SelectedChapter.id}`, {
+      fetch(`https://mad2-quiz-master-vue-flask-7.onrender.com//edit_chapter/${this.SelectedChapter.id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -326,7 +326,7 @@ export default {
         }); 
     },
     deleteChapter(id) {
-      fetch(`mad2-quiz-master-vue-flask-7.onrender.com/delete_chapter/${id}`, {
+      fetch(`https://mad2-quiz-master-vue-flask-7.onrender.com//delete_chapter/${id}`, {
         method: "DELETE",
         headers: {
           "authorization": 'Bearer '+ localStorage.getItem('admin_token'),

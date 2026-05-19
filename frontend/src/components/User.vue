@@ -105,7 +105,7 @@ export default {
   },
   methods: {
     fetchQuizzes() {
-      fetch('mad2-quiz-master-vue-flask-7.onrender.com/get_quiz', {
+      fetch('https://mad2-quiz-master-vue-flask-7.onrender.com//get_quiz', {
         headers: {
             "content-type": "application/json",
           'Authorization': `Bearer ${localStorage.getItem('user_token')}`
@@ -121,7 +121,7 @@ export default {
     },
 
     fetchUserDetails() {
-       fetch('mad2-quiz-master-vue-flask-7.onrender.com/username', {
+       fetch('https://mad2-quiz-master-vue-flask-7.onrender.com//username', {
         headers: {
             'Content-Type': 'application/json',
           'Authorization': `Bearer ${localStorage.getItem('user_token')}`

@@ -59,7 +59,7 @@ export default {
   },
   methods: {
     fetchScores() {
-      fetch('mad2-quiz-master-vue-flask-7.onrender.com/user_result', {
+      fetch('https://mad2-quiz-master-vue-flask-7.onrender.com//user_result', {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
@@ -75,7 +75,7 @@ export default {
         });
     },
     exportScores() {
-      fetch('mad2-quiz-master-vue-flask-7.onrender.com/export_details', {
+      fetch('https://mad2-quiz-master-vue-flask-7.onrender.com//export_details', {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',

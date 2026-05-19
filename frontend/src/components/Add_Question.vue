@@ -84,7 +84,7 @@ export default {
   },
   methods: {
     addQuestion() {
-      fetch(`mad2-quiz-master-vue-flask-7.onrender.com/add_question/${this.$route.params.quiz_id}`, {
+      fetch(`https://mad2-quiz-master-vue-flask-7.onrender.com//add_question/${this.$route.params.quiz_id}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
