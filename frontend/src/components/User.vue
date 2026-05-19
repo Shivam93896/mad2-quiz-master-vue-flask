@@ -105,7 +105,7 @@ export default {
   },
   methods: {
     fetchQuizzes() {
-      fetch('http://127.0.0.1:5000/get_quiz', {
+      fetch('mad2-quiz-master-vue-flask-7.onrender.com/get_quiz', {
         headers: {
             "content-type": "application/json",
           'Authorization': `Bearer ${localStorage.getItem('user_token')}`
@@ -121,7 +121,7 @@ export default {
     },
 
     fetchUserDetails() {
-       fetch('http://127.0.0.1:5000/username', {
+       fetch('mad2-quiz-master-vue-flask-7.onrender.com/username', {
         headers: {
             'Content-Type': 'application/json',
           'Authorization': `Bearer ${localStorage.getItem('user_token')}`

@@ -255,7 +255,7 @@ export default {
       
     },
     updateQuiz() {
-      fetch(`http://localhost:5000/edit_quiz/${this.SeletedQuiz.id}`, {
+      fetch(`mad2-quiz-master-vue-flask-7.onrender.com/edit_quiz/${this.SeletedQuiz.id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -274,7 +274,7 @@ export default {
     }, 
     
     deleteQuiz(id) {
-      fetch(`http://localhost:5000/delete_quiz/${id}`, {
+      fetch(`mad2-quiz-master-vue-flask-7.onrender.com/delete_quiz/${id}`, {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json',
@@ -290,7 +290,7 @@ export default {
 
     
     fetchQuizzes() {
-      const response = fetch("http://localhost:5000/get_quiz",{
+      const response = fetch("mad2-quiz-master-vue-flask-7.onrender.com/get_quiz",{
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
@@ -310,7 +310,7 @@ export default {
     },
 
     addQuiz() {
-      fetch("http://localhost:5000/add_quiz", {
+      fetch("mad2-quiz-master-vue-flask-7.onrender.com/add_quiz", {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -328,7 +328,7 @@ export default {
       
     },
     fetchChapters() {
-      fetch("http://localhost:5000/add_chapter/get", {
+      fetch("mad2-quiz-master-vue-flask-7.onrender.com/add_chapter/get", {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',

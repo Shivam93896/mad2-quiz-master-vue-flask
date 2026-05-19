@@ -58,7 +58,7 @@ export default {
   },
   methods: {
     addChapter() {
-       fetch(`http://localhost:5000/add_chapter/${this.$route.params.sub_id}`, {
+       fetch(`mad2-quiz-master-vue-flask-7.onrender.com/add_chapter/${this.$route.params.sub_id}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

@@ -218,7 +218,7 @@ export default {
   methods: {
 
     fetchSubjects() {
-        fetch("http://localhost:5000/add_subject/get", {
+        fetch("mad2-quiz-master-vue-flask-7.onrender.com/add_subject/get", {
             method: "GET",
             headers: {
                 "authorization": 'Bearer '+ localStorage.getItem('admin_token'),
@@ -239,7 +239,7 @@ export default {
     },
     addSubject() {
     
-         fetch("http://localhost:5000/add_subject/post", {
+         fetch("mad2-quiz-master-vue-flask-7.onrender.com/add_subject/post", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -266,7 +266,7 @@ export default {
     },
 
     editSubject() {
-      fetch(`http://localhost:5000/edit_subject/${this.SelectedSubject.id}`, {
+      fetch(`mad2-quiz-master-vue-flask-7.onrender.com/edit_subject/${this.SelectedSubject.id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -286,7 +286,7 @@ export default {
         });
     },
     deleteSubject(id) {
-      fetch(`http://localhost:5000/delete_subject/${id}`, {
+      fetch(`mad2-quiz-master-vue-flask-7.onrender.com/delete_subject/${id}`, {
         method: "DELETE",
         headers: {
           "authorization": 'Bearer '+ localStorage.getItem('admin_token')
@@ -307,7 +307,7 @@ export default {
       modal.show();
     },
     editChapter() {
-      fetch(`http://localhost:5000/edit_chapter/${this.SelectedChapter.id}`, {
+      fetch(`mad2-quiz-master-vue-flask-7.onrender.com/edit_chapter/${this.SelectedChapter.id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -326,7 +326,7 @@ export default {
         }); 
     },
     deleteChapter(id) {
-      fetch(`http://localhost:5000/delete_chapter/${id}`, {
+      fetch(`mad2-quiz-master-vue-flask-7.onrender.com/delete_chapter/${id}`, {
         method: "DELETE",
         headers: {
           "authorization": 'Bearer '+ localStorage.getItem('admin_token'),

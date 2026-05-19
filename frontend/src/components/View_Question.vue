@@ -143,7 +143,7 @@ export default {
   },
   methods: {
     fetchQuestions() {
-      fetch(`http://127.0.0.1:5000/get_questions/${this.quizId}`, {
+      fetch(`mad2-quiz-master-vue-flask-7.onrender.com/get_questions/${this.quizId}`, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
@@ -163,7 +163,7 @@ export default {
         bootstrap.Modal.getOrCreateInstance(document.getElementById('editQuestionModal')).show();
     },
     submitEditedQuestion(){
-        fetch(`http://127.0.0.1:5000/edit_question/${this.editedQuestion.id}`, {
+        fetch(`mad2-quiz-master-vue-flask-7.onrender.com/edit_question/${this.editedQuestion.id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -180,7 +180,7 @@ export default {
  
     },
     deleteQuestion(questionId) {
-      fetch(`http://127.0.0.1:5000/delete_question/${questionId}`, {
+      fetch(`mad2-quiz-master-vue-flask-7.onrender.com/delete_question/${questionId}`, {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json',

@@ -59,7 +59,7 @@ export default {
   },
   methods: {
     fetchScores() {
-      fetch('http://127.0.0.1:5000/user_result', {
+      fetch('mad2-quiz-master-vue-flask-7.onrender.com/user_result', {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
@@ -75,7 +75,7 @@ export default {
         });
     },
     exportScores() {
-      fetch('http://127.0.0.1:5000/export_details', {
+      fetch('mad2-quiz-master-vue-flask-7.onrender.com/export_details', {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
