@@ -114,7 +114,7 @@ export default {
     },
     methods: {
         async fetchQuiz() {
-            const response = await fetch(`http://127.0.1:5000/start_quiz/${this.$route.params.quiz_id}`,{
+            const response = await fetch(`https://mad2-quiz-master-vue-flask-7.onrender.com//start_quiz/${this.$route.params.quiz_id}`,{
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -160,7 +160,7 @@ export default {
             const payload = {
                 correct_option: this.prepareAnswer()
             };
-            fetch(`http://127.0.1:5000/start_quiz/${this.$route.params.quiz_id}`, {
+            fetch(`https://mad2-quiz-master-vue-flask-7.onrender.com//start_quiz/${this.$route.params.quiz_id}`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
